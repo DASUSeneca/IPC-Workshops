@@ -20,3 +20,20 @@ int main(void)
 
     return 0;
 }
+
+/*
+    HELPER: printf formatting statements....
+	=========================================
+	
+    Step #7:
+		printf("Item Priority Financed        Cost\n");
+		printf("---- -------- -------- -----------\n");
+		
+		printf("%3d  %5d    %5c    %11.2lf\n", ...
+		
+
+	Step #8:
+		printf("---- -------- -------- -----------\n");
+		printf("                      $%11.2lf\n\n", ...
+
+*/
