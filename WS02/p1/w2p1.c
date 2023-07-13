@@ -15,11 +15,43 @@ piece of work is entirely of my own creation.
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
-
+#define TEST_INT 24
 int main(void)
 {
-    const double TAX = 0.13;
-    const char patSize = 'S';
-
+    int intA = 0, intB = 0, fail = 0;
+    intB = getIntPositive(&intA);
+    if (intA == intB && intA == TEST_INT)
+    {
+        printf("<PASSED>\n");
+    }
+    else
+    {
+        printf("<!!! FAILED !!!>\n");
+        fail++;
+    }
     return 0;
+}
+int getIntPositive(int *int_ptr)
+{
+    int input;
+    int flag = 1;
+
+    do
+    {
+        scanf("%d", &input);
+        if (input <= 0)
+        {
+            printf("ERROR: Enter a positive value: ");
+        }
+        else
+        {
+            flag = 0;
+        }
+    } while (flag);
+
+    if (int_ptr != NULL)
+    {
+        *int_ptr = input;
+    }
+    return input;
 }
